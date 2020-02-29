@@ -211,5 +211,14 @@ git目录中核心就是objects文件，进入objects文件夹，发现很多2�
 ![图29](./shot-screen/29.png)
 
 ## 修改任意一次commit的message
-使用命令`git rebase -i parentCommitID`,parentCommitID即需要变更的commitID的父ID，执行命令后，会进入交互式界面，根据下面命令的提示，编辑当前文件的命令，然后保存退出，再次进入到一个文件中，这个文件就是期望修改的文件，直接编辑第一条messsage即可。
+使用命令`git rebase -i parentCommitID`,parentCommitID即需要变更的commitID的父ID，执行命令后，会进入交互式界面，根据下面命令的提示，编辑当前文件的命令，这里使用r，然后保存退出，再次进入到一个文件中，这个文件就是期望修改的文件，直接编辑第一条messsage即可。下面则是完成的操作截图
+
+![图30](./shot-screen/30.png)
+
+![图31](./shot-screen/31.png)
+
+![图32](./shot-screen/32.png)
+
+![图33](./shot-screen/33.png)
+
 
