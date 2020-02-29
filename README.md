@@ -175,6 +175,7 @@ git目录中核心就是objects文件，进入objects文件夹，发现很多2�
 2. 分离头指针会出现什么影响
 分离头指针后，忍让可以继续编辑项目，但在提交时，会出现提示性操作，如果没有正确操作，直接提交了，那么git会把这个提交当作垃圾，间隔一段时间被清理掉,因为此时的commit没有和任何的分支绑定。
 
+<<<<<<< HEAD
 3. 正确的做法：在提交时将commit与分支绑定绑定，使用命令`git branch [NewBranchName] [CommitID]`
 
 
@@ -218,5 +219,6 @@ git目录中核心就是objects文件，进入objects文件夹，发现很多2�
 ![图32](./shot-screen/32.png)
 
 ![图33](./shot-screen/33.png)
+
 
 
