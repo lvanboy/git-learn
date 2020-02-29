@@ -106,5 +106,6 @@ git rm 修改前的文件名
 ![图15](./shot-screen/15.png)
 修改feature-dev分支，并提交一次，在使用命令`git log --all --oneline --graph`查看。
 ![图16](./shot-screen/16.png)
-
+使用命令`git log --oneline feature-dev`，只查看feature-dev分支的简要提交记录。
+![图17](./shot-screen/17.png)
 
