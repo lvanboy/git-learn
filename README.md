@@ -99,4 +99,12 @@ git rm 修改前的文件名
 
 4. 假设不止一个分支，为了满足这个条件，使用命令git checkout -b [BranchName] [CommitID],创建一个分支
 ![图13](./shot-screen/13.png)
+使用命令`git log --all --oneline`,查看所有分支的简要提交信息
+
+![图14](./shot-screen/14.png)
+使用命令`git log --all --oneline --graph`,以图形分叉的方式展示出分支克隆的关系,因为当前只是创建了一个分支，并没有在当前分支上进行修改和提交，最左侧展示了一条直线
+![图15](./shot-screen/15.png)
+修改feature-dev分支，并提交一次，在使用命令`git log --all --oneline --graph`查看。
+![图16](./shot-screen/16.png)
+
 
