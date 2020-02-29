@@ -75,7 +75,7 @@ git config --global user.email 1801996111@qq.com
 
 ## git add 暂存区的意义
 假设有这样一个场景，实现xxx需求，`git status`,`git add .`后，发现这个写法不够好，代码质量太低，想把所有add的内容全部撤销，回到初始状态，放弃之前编辑的代码，也就是当前commit时的代码状态，使用命令`git --rest --hard`。慎重使用，别把自己一天的成果reset了。
- 
+
 
  ## git 文件/文件夹 重命名
 1. 在本地修改文件或文件夹后，执行git status后，如图：
@@ -169,19 +169,17 @@ git目录中核心就是objects文件，进入objects文件夹，发现很多2�
 ## 分离头指针
 
 1. 什么样的git操作会出现分离头指针？
-
 使用命令`git checkout [commitID]`
 
-2. 分离头指针会出现什么影响
+2. 分离头指针会出现什么影响。
 分离头指针后，忍让可以继续编辑项目，但在提交时，会出现提示性操作，如果没有正确操作，直接提交了，那么git会把这个提交当作垃圾，间隔一段时间被清理掉,因为此时的commit没有和任何的分支绑定。
 
-<<<<<<< HEAD
-3. 正确的做法：在提交时将commit与分支绑定绑定，使用命令`git branch [NewBranchName] [CommitID]`
+3. 正确的做法：在提交时将commit与分支绑定绑定，使用命令`git branch [NewBranchName] [CommitID]`。
 
 
 
 ## HEAD和Branch的关系
-1. HEAD是指向一个Branch，Branch指向一个commit的
+1. HEAD是指向一个Branch，Branch指向一个commit的。
 例如基于master分支创建一个branch-test分支，命令`git checkout -b branch-test master`,如果当前所在分支为master，则master可以省略，此时HEAD则指向branch-test。
 
 ![图25](./shot-screen/25.png)
@@ -194,14 +192,14 @@ git目录中核心就是objects文件，进入objects文件夹，发现很多2�
 
 ![图27](./shot-screen/27.png)
 
-4. 根据HEAD指代的commit寻找它的父级commit，也就是上一次提交(或者上n次提交)，使用HEAD~1(n),对比文件时则可以使用`git diff HEAD HEAD~1`,(另外 **^** 代表父级，寻找父亲的父亲，则使用 **^^**)，所以一般使用 **~**更容易代表多级
+4. 根据HEAD指代的commit寻找它的父级commit，也就是上一次提交(或者上n次提交)，使用HEAD~1(n),对比文件时则可以使用`git diff HEAD HEAD~1`,(另外 **^** 代表父级，寻找父亲的父亲，则使用 **^^**)，所以一般使用 **~**更容易代表多级。
 
 ![图28](./shot-screen/28.png)
 
 
 ## Branch的相关操作
-1. 查看当前所有分支，`git branch -av`
-2. 删除xxx分支，`git branch -d xxx`，当弹出unmerge的提示后，如果可以保证当前分支删除后没有任何影响，使用命令`git branch -D xxx`
+1. 查看当前所有分支，`git branch -av`。
+2. 删除xxx分支，`git branch -d xxx`，当弹出unmerge的提示后，如果可以保证当前分支删除后没有任何影响，使用命令`git branch -D xxx`。
 
 
 ## 修改最新的commit的message
@@ -210,7 +208,7 @@ git目录中核心就是objects文件，进入objects文件夹，发现很多2�
 ![图29](./shot-screen/29.png)
 
 ## 修改任意一次commit的message
-使用命令`git rebase -i parentCommitID`,parentCommitID即需要变更的commitID的父ID，执行命令后，会进入交互式界面，根据下面命令的提示，编辑当前文件的命令，这里使用r，然后保存退出，再次进入到一个文件中，这个文件就是期望修改的文件，直接编辑第一条messsage即可。下面则是完成的操作截图
+使用命令`git rebase -i parentCommitID`,parentCommitID即需要变更的commitID的父ID，执行命令后，会进入交互式界面，根据下面命令的提示，编辑当前文件的命令，这里将pick改为r，然后文件保存退出，系统会再次进入到一个文件中，这个文件就是期望修改的文件，直接编辑第一条messsage即可，进入的都是可编辑的文件，编辑完成后，记得保存退出即可。下面则是完成的操作截图。
 
 ![图30](./shot-screen/30.png)
 
