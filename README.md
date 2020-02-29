@@ -84,3 +84,19 @@ git rm 修改前的文件名
 
 3. 上面操作过于麻烦，最快的做法是git mv 当前文件名  期望修改的文件名(如果你只是因语义问题，期望改变文件名称时，你应该这样做)。
 ![图9](./shot-screen/09.png)
+
+
+
+## git log 查询版本演变历史
+1. 直接执行`git log`，显示git提交的详细信息
+![图10](./shot-screen/10.png)
+
+2. 为了更清晰的显示主要提交做了什么，省略其他额外的不必要的信息，命令`git log --oneline`
+![图11](./shot-screen/11.png)
+
+3. 如果这个项目提交了好几百次，你只期望查看最近的3（或者任意次）次提交记录，命令`git log -n5 --oneline`
+![图12](./shot-screen/12.png)
+
+4. 假设不止一个分支，为了满足这个条件，使用命令git checkout -b [BranchName] [CommitID],创建一个分支
+![图13](./shot-screen/13.png)
+
