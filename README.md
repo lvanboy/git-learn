@@ -221,4 +221,35 @@ git目录中核心就是objects文件，进入objects文件夹，发现很多2�
 
 ![图33](./shot-screen/33.png)
 
+## 将多个连续commit合并成一个
+使用命令`git rebase -i parentCommitID`，然后进入配置文件修改与保存。
+1. 假设如下图，将红色框框内的commit合并成一个，那此时需要的parentCommitID为**21f1178**
+
+![图34](./shot-screen/34.png)
+
+2. 执行`git rebase -i parentCommitID`,进入对应的配置文件，进行编辑，下方的记录是最新的，合并时，根据命令从下往上合并，具体操作：将需要合并的commit对应的命令`pick`修改为`s`,然后保存退出即可。
+
+![图35](./shot-screen/35.png)
+![图36](./shot-screen/36.png)
+
+3. 进入到另外一个合并管理的配置文件，添加最新的合并message，同时也可以注释掉之前的message。保存退出即可。
+
+![图37](./shot-screen/37.png)
+
+4. 合并后的结果和预期一致。
+![图38](./shot-screen/38.png)
+
+## 将任意的commit合并
+同理，使用命令`git rebase -i parentCommitID`，然后进入配置文件修改与保存。
+1. 假设如图，合并红色框中不连续的commit，对应的 **parentCommitID** 为feda52d。
+
+![图39](./shot-screen/38.png)
+
+2. 执行`git rebase -i parentCommitID`，进入到配置文件中，将合并对象的commit的`pick`命令变为`s`，剪贴到被合并commit的下一行。(发生commit合并冲突，解决冲突，按照git提示操作),保存退出即可。
+
+![图40](./shot-screen/38.png)
+
+
+
+
 
