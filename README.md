@@ -275,10 +275,17 @@ git目录中核心就是objects文件，进入objects文件夹，发现很多2�
 ## 将工作区恢复为暂存区
 此时应该是这样的情景，对文件A的代码已经完成了封装，将它放置到暂存区，但是呢，你觉得这个方案不够好，于是呢，又在文件A中添加了另外一种方案，但是这个方案搞了半天也没有实现。但是项目需要测试，这时候就需要把工作区中文件A一些无用的操作恢复到暂存区中。
 
-![45](.shot-screen/45.png)
+![图45](./shot-screen/45.png)
 
-![45](.shot-screen/46.png)
+![图46](./shot-screen/46.png)
 
 
 ## 重置到某个commit提交记录，意味着在这个commitID后面提交的记录都会被清楚
 使用命令`git reset --hard [CommitID]`
+
+![图47](./shot-screen/47.png)
+
+
+## 对比两个分支（其实分支对应的就是最新一次的commitID），实际就是对比不能commit的差异。
+使用命令`git diff [BranchName] [BranchName1] -- [文件名]`,`-- 文件名`指定了对比的文件，不加此参数，则是对比所有文件。
+![图48](./shot-screen/48.png) 
