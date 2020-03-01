@@ -243,12 +243,14 @@ git目录中核心就是objects文件，进入objects文件夹，发现很多2�
 同理，使用命令`git rebase -i parentCommitID`，然后进入配置文件修改与保存。
 1. 假设如图，合并红色框中不连续的commit，对应的 **parentCommitID** 为feda52d。
 
-![图39](./shot-screen/38.png)
+![图39](./shot-screen/39.png)
 
 2. 执行`git rebase -i parentCommitID`，进入到配置文件中，将合并对象的commit的`pick`命令变为`s`，剪贴到被合并commit的下一行。(发生commit合并冲突，解决冲突，按照git提示操作),保存退出即可。
 
-![图40](./shot-screen/38.png)
+![图40](./shot-screen/40.png)
 
+3. 进入到另外一个合并管理的配置文件，添加最新的合并message，同时也可以注释掉之前的message。保存退出即可,再次查看commit记录，只会出现一个第八次提交的commit。
+![图41](./shot-screen/41.png)
 
 
 
