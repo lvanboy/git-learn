@@ -347,3 +347,18 @@ git目录中核心就是objects文件，进入objects文件夹，发现很多2�
 
 
 ## git仓库的本地备份
+1. 使用娅协议，过程不可见，将.git文件备份`git clone [Path] [Name]`,Path是现有git项目的本地路径，Name就是复制的名称。
+
+![图53](./shot-screen/53.png)
+
+2. 使用智能协议，过程展示传输进度信息等等，同样的命令`git clone [Path] [Name]`，关键在于Path本地路径前加上**file://**。
+![图54](./shot-screen/54.png)
+
+3. 添加一个远端地址，`git remote add [Name] [Path]`。
+![图56](./shot-screen/56.png)
+
+4. 查看远端地址，`git remote -v`
+![图55](./shot-screen/55.png)
+
+5. 新建1个分支，将这个分支push同步到本地的远端
+![图57](./shot-screen/57.png)
