@@ -378,3 +378,30 @@ git目录中核心就是objects文件，进入objects文件夹，发现很多2�
 5. 当远程与本地存在不一样时，需要先`git pull [repoName] `，这个命令相等于`git fetch [repoName]` and `git merge [repoName]/master`，本地的master主动与repoName远程仓库的主分支合并，如果merged过程中如果发生冲突，需要手动解决。另外如果merge报错：`fatal：refusing to merge unrelated histories`，这个报错的说明了独立的两棵树不能合并，可使用命令`git merge --allow-unrelated-histories [repoName]/master`。
 
 
+
+## git本身的缺点
+1. git无法帮助开发者寻找开源项目
+2. 无法发布分享到公共平台上
+
+## github的有点
+1. 有助于协同工作
+2. 有助于开源发展
+
+
+
+## github搜索技巧
+Repositories搜索技巧
+1. 搜索特定日期范围通过`created:<2019-11-01`;
+2. 默认的搜索是根据repo的名称和描述来匹配，通过`es6 in:readme`,表示搜索es6关键词出现在readme中的仓库。
+3. 搜索特定stars数量通过`stars:>2000`。
+4. 搜索特定编程语言通过`language:javascript`。
+
+Code搜索技巧
+在特定的文件中，搜索特定文字，通过`'after_script' + 'stage:deploy' filename:.gitlab-ci.yml`，表示在文件名为.gitlab-ci.yml中搜索包含'after_script'和'stage:deploy'这样的关键字。
+
+
+[更多的搜索技巧点击这里](https://help.github.com/en/github/searching-for-information-on-github/searching-on-github)
+
+
+
+
